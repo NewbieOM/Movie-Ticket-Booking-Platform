@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ticket Booking</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="navbar">
+        <img src="assets/logo.svg" alt="Logo" class="logo">
+        <nav>
+            <a href="#">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="movies.html">Shows</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+
+            <img src="assets/marvelLogo.svg" alt="Marvel Studios" style="width:180px; margin-bottom:15px;">
+
+            <h1>MOON KNIGHT</h1>
+
+            <p style="margin:10px 0; font-size:16px;">
+                Action | Adventure | Superhero &nbsp;&nbsp; 📅 2026 &nbsp;&nbsp; ⏱ 5hr 15min
+            </p>
+
+            <p style="max-width:450px; line-height:1.6;">
+                Moon Knight follows Marc Spector, a former mercenary with Dissociative
+                Identity Disorder, who becomes the avatar of the Egyptian moon god Khonshu.
+            </p>
+
+            <a href="movies.html" style="text-decoration:none;">
+                <button style="
+                                    margin-top:20px;
+                                    padding:12px 24px;
+                                    background:#ff4d6d;
+                                    color:white;
+                                    border:none;
+                                    border-radius:30px;
+                                    font-size:16px;
+                                    cursor:pointer;
+                                ">
+                    Explore Movies →
+                </button>
+            </a>
+
+
+        </div>
+
+    </section>
+
+    <!-- NOW SHOWING MOVIES SECTION -->
+
+    <section class="movies">
+        <h2>Now Showing →</h2>
+
+        <div class="movie-grid">
+
+            <div class="movie-card">
+                <img src="assets/posters/moonknight.jpg" alt="Moon Knight Poster">
+                <div class="movie-info">
+                    <h3>Moon Knight</h3>
+                    <p>Action | Superhero</p>
+                    <button class="view-btn" data-movie="moonknight">View</button>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="assets/posters/avengers.jpg" alt="Avengers">
+                <div class="movie-info">
+                    <h3>Avengers</h3>
+                    <p>Action | Adventure</p>
+                    <button class="view-btn" data-movie="avengers">View</button>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="assets/posters/ironman.jpg" alt="Ironman">
+                <div class="movie-info">
+                    <h3>Iron Man</h3>
+                    <p>Sci-Fi | Action</p>
+                    <button class="view-btn" data-movie="Ironman">View</button>
+                </div>
+            </div>
+
+            <div class="movie-card">
+                <img src="assets/posters/thor.jpg" alt="Thor">
+                <div class="movie-info">
+                    <h3>Thor</h3>
+                    <p>Fantasy | Action</p>
+                    <button class="view-btn" data-movie="thor">View</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- YOUTUBE TRAILER SECTION -->
+    <section class="trailer-section">
+        <h2>Watch Official Trailer</h2>
+
+        <div class="trailer-container">
+            <iframe src="https://www.youtube.com/embed/x7Krla_UxRg?rel=0" title="Official Trailer" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+    </section>
+
+
+    <!-- FOOTER SECTION -->
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <!-- Left: Project Info -->
+            <div class="footer-about">
+                <h2><span>Q</span>uickShow</h2>
+                <p>
+                    Lorem Ipsum has been the industry's standard <br> dummy text
+                    ever since the 1500s, <br><span>An unknown printer took a galley
+                        of type and <br> scrambled it to make a type specimen book.</span>
+                </p>
+
+                <div class="footer-stores">
+                    <img src="assets/googlePlay.svg" alt="Google Play">
+                    <img src="assets/appStore.svg" alt="App Store">
+                </div>
+            </div>
+
+            <!-- Middle: Company -->
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li>Home</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>Privacy policy</li>
+                </ul>
+            </div>
+
+            <!-- Right: Contact -->
+            <div class="footer-contact">
+                <h3>Get in touch</h3>
+                <p>+250-784-652-570</p>
+                <p>OMiishows07@gmail.com</p>
+            </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="footer-bottom">
+            <p>Copyright 2025 © OMiishows. All Right Reserved.</p>
+        </div>
+
+    </footer>
+
+  <script>
+        const buttons = document.querySelectorAll(".view-btn");
+
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const movie = btn.getAttribute("data-movie");
+                window.location.href = `movie-details.html?movie=${movie}`;
+            });
+        });
+    </script>
+
+</body>
+
+</html>

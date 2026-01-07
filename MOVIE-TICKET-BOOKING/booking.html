@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats</title>
+
+    <!-- Outfit Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background:#000; color:white; font-family:'Outfit', sans-serif;">
+
+    <!-- NAVBAR (SAME AS OTHER PAGES) -->
+    <header class="navbar">
+        <img src="assets/logo.svg" alt="Logo" class="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="movies.html">Movies</a>
+            <a href="#">Shows</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- SEAT SELECTION -->
+    <section style="padding:140px 20px 60px; text-align:center;">
+
+        <div class="seat selected"></div>
+
+
+        <h1>Select Your Seats</h1>
+        <p style="margin:10px 0 30px; color:#aaa;">
+            Screen This Way
+        </p>
+
+        <!-- SCREEN -->
+        <div style="
+      width:80%;
+      margin:0 auto 40px;
+      height:20px;
+      background:#444;
+      border-radius:0 0 40px 40px;
+  "></div>
+
+        <!-- SEATS -->
+        <div class="seats-container">
+
+            <div class="seat-row">
+                <span class="row-label">A</span>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-label">B</span>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+
+            <div class="seat-row">
+                <span class="row-label">C</span>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+            </div>
+
+        </div>
+
+        <!-- LEGEND -->
+        <div style="margin-top:40px;">
+            <span class="legend available"></span> Available
+            <span class="legend selected"></span> Selected
+            <span class="legend occupied"></span> Occupied
+        </div>
+
+        <!-- PROCEED BUTTON -->
+        <div style="margin-top:40px;">
+            <button style="
+      padding:14px 40px;
+      background:#ff4d6d;
+      color:white;
+      border:none;
+      border-radius:30px;
+      font-size:16px;
+      cursor:pointer;
+    ">
+                Proceed to Payment
+            </button>
+        </div>
+
+        <p style="margin-top:15px; color:#aaa; font-size:14px;">
+            * Seat selection is for demo purpose only
+        </p>
+
+
+    </section>
+
+</body>
+
+</html>

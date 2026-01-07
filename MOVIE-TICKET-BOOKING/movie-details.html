@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Details</title>
+
+  <!-- Outfit Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background:#000; color:white; font-family:'Outfit', sans-serif;">
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <img src="assets/logo.svg" class="logo" alt="Logo">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="movies.html">Movies</a>
+    <a href="#">Shows</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<!-- MOVIE DETAILS -->
+<section class="movie-details">
+
+  <!-- Poster -->
+  <div class="movie-poster">
+    <img id="moviePoster" alt="Movie Poster">
+  </div>
+
+  <!-- Info -->
+  <div class="movie-info-details">
+    <span class="language" id="movieLang"></span>
+    <h1 id="movieTitle"></h1>
+    <p class="rating" id="movieRating"></p>
+    <p class="description" id="movieDesc"></p>
+    <p class="meta" id="movieMeta"></p>
+
+    <div class="action-buttons">
+      <a id="trailerLink" target="_blank">
+        <button class="trailer-btn">Watch Trailer</button>
+      </a>
+
+      <a href="booking.html">
+        <button class="buy-btn">Buy Tickets</button>
+      </a>
+
+      <button class="fav-btn">♡</button>
+    </div>
+  </div>
+
+</section>
+
+<!-- CAST -->
+<section class="cast-section">
+  <h3>Your Favorite Cast</h3>
+  <div class="cast-row" id="castContainer"></div>
+</section>
+
+<!-- DATE BAR -->
+<section class="date-bar">
+  <span>Choose Date</span>
+  <button>27 Dec</button>
+  <a href="booking.html">
+    <button class="buy-btn">Book Now</button>
+  </a>
+</section>
+
+<!-- JS LOGIC -->
+<script>
+  const movies = {
+    moonknight: {
+      title: "Moon Knight",
+      lang: "ENGLISH",
+      rating: "⭐ 6.9 User Rating",
+      poster: "assets/posters/moonknight.jpg",
+      desc: "Moon Knight follows Marc Spector, a former mercenary with Dissociative Identity Disorder, who becomes the avatar of the Egyptian moon god Khonshu.",
+      meta: "Action • Superhero • 2023",
+      trailer: "https://www.youtube.com/watch?v=x7Krla_UxRg",
+      cast: ["Oscar Isaac", "Ethan Hawke", "May Calamawy"]
+    },
+    avengers: {
+      title: "Avengers",
+      lang: "ENGLISH",
+      rating: "⭐ 8.0 User Rating",
+      poster: "assets/posters/avengers.jpg",
+      desc: "Earth’s mightiest heroes must unite to stop a global threat.",
+      meta: "Action • Adventure • 2019",
+      trailer: "https://www.youtube.com/watch?v=eOrNdBpGMv8",
+      cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"]
+    },
+    Ironman: {
+      title: "Ironman",
+      lang: "ENGLISH",
+      rating: "⭐ 9.0 User Rating",
+      poster: "assets/posters/ironman.jpg",
+      desc: "The Ironman who wants to save the world.",
+      meta: "Thrill • Adventure • 2019",
+      trailer: "https://www.youtube.com/watch?v=eOrNdBpGMv8",
+      cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"]
+    },
+    thor: {
+      title: "thor",
+      lang: "ENGLISH",
+      rating: "⭐ 8.5 User Rating",
+      poster: "assets/posters/thor.jpg",
+      desc: "The man with the big hammer crushing heads.",
+      meta: "Action • Adventure • 2019",
+      trailer: "https://www.youtube.com/watch?v=eOrNdBpGMv8",
+      cast: ["Robert Downey Jr.", "Chris Evans", "Scarlett Johansson"]
+    }
+  };
+
+  const params = new URLSearchParams(window.location.search);
+  const movieKey = params.get("movie");
+
+  if (movies[movieKey]) {
+    const m = movies[movieKey];
+    moviePoster.src = m.poster;
+    movieTitle.innerText = m.title;
+    movieLang.innerText = m.lang;
+    movieRating.innerText = m.rating;
+    movieDesc.innerText = m.desc;
+    movieMeta.innerText = m.meta;
+    trailerLink.href = m.trailer;
+
+    m.cast.forEach(name => {
+      const div = document.createElement("div");
+      div.className = "cast";
+      div.innerHTML = `<p>${name}</p>`;
+      castContainer.appendChild(div);
+    });
+  }
+</script>
+
+</body>
+</html>
